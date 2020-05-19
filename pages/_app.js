@@ -1,8 +1,14 @@
+import Theme from "./theme"
+import Header from './header'
+
 function MyApp({ Component, pageProps }) {
     return (
         <>
-            dawdwad 
-            <Component {...pageProps} />
+            
+            <Theme>
+                <Header/>
+                <Component {...pageProps} />
+            </Theme>
         </>
        
     )
