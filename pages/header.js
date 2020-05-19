@@ -27,14 +27,14 @@ const Header = props => {
         <Flex
             style={ isTop ? {background: ''} : {background: 'white'} }
             w='100%' zIndex={50} as="nav" align="center" justify="space-between"
-            wrap="wrap" py="1.5rem" px={120} color='black'
+            wrap="wrap" py="1.5rem" px={{md:120, sm:5}} color='black'
             {...props}>
             <Flex align="center" mr={5}>
                 <Heading as="h1" size="lg" letterSpacing={"-.1rem"}>
                 SmartGov
                 </Heading>
             </Flex>
-            <Box display={{ sm: "block", md: "none" }} onClick={handleToggle}>
+            <Box display={{ sm: 'block', md: "none" }} onClick={handleToggle}>
                 <svg
                     fill="teal"
                     width="12px"
@@ -51,24 +51,19 @@ const Header = props => {
                 <MenuItems>Home</MenuItems>
                 <MenuItems>About</MenuItems>
                 <MenuItems>Products</MenuItems>
+                <Box
+                  display={{ sm: show ? "block" : "none", md: "block" }}
+                  mt={{ base: 4, md: 0 }}>
+                  <IconButton
+                      variant="ghost"
+                      variantColor="teal"
+                      aria-label="Call Sage"
+                      fontSize="20px"
+                      icon='search'/>
+                </Box>
             </Box>
 
-            <Box
-                display={{ sm: show ? "block" : "none", md: "block" }}
-                mt={{ base: 4, md: 0 }}>
-                <IconButton
-                    variant="ghost"
-                    variantColor="teal"
-                    aria-label="Call Sage"
-                    fontSize="20px"
-                    icon='search'/>
-                {/* <IconButton
-                    variant="ghost"
-                    variantColor="teal"
-                    aria-label="Call Sage"
-                    fontSize="20px"
-                    icon='search'/> */}
-            </Box>
+           
         </Flex>
       </Box>
     
